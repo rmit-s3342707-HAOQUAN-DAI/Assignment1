@@ -12,13 +12,14 @@ public class Ozlympic {
             atheletes[i] = new Athelete(gameType);
 
         }
-        System.out.println("Ozlympic Game!!!");
+        System.out.println("Ozlympic Game!!!");  // main menue
         do {
             System.out.println("================================");
             System.out.println("1. Select a game to run");
             System.out.println("2. Display the final results of all games");
             System.out.println("3. Display the scores of all atheletes");
-            System.out.format("%15s", "Please select 1 - 3: ");
+            System.out.println("4. Exit");
+            System.out.format("%15s", "Please select 1 - 4: ");
             Scanner input = new Scanner(System.in);
             int selectedOption = input.nextInt();
             if (selectedOption == 1) {
@@ -91,8 +92,8 @@ public class Ozlympic {
                 }
             }
             if (selectedOption == 3) {
-                if (games.size() <= 0) {
-                    System.out.println("NO GAME RUN YET.");
+                if (games.size() <= 0) {  
+                    System.out.println("NO GAME RUN YET."); //if there is no game saved in the list
                     continue;
                 }
                 System.out.println("======== All Atheletes Stats =========");
@@ -103,6 +104,11 @@ public class Ozlympic {
                 }
                 System.out.println("=====================================");
 
+            }
+            else if(selectedOption == 4)
+            {
+            	System.out.println("You have exited.");
+            	break;
             }
 
         } while (true);

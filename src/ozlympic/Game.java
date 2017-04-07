@@ -18,11 +18,11 @@ public class Game {
     public Game(int gameType, int gameIndex, Athelete[] atheletes) {
         this.gameType = gameType;
         this.gameIndex = gameIndex;
-        int totalAtheletes = Utility.GetRandom(4, 8);
+        int totalAtheletes = Utility.GetRandom(4, 8); // randomly generate 4 to 8 players
         for (int i = 0; i < atheletes.length; i++) {
             Athelete athelete = atheletes[i];
             athelete.initGame();
-            if (athelete.gameType == gameType || athelete.gameType == GameType.ALL) {
+            if (athelete.gameType == gameType || athelete.gameType == GameType.ALL) { 
                 athelete.selectedGameType = gameType;
                 this.atheletes.add(athelete);
                 if (this.atheletes.size() >= totalAtheletes) {
@@ -92,12 +92,12 @@ public class Game {
     }
 
     void showAtheleteResults() {
-//        System.out.println("Name" + "\t" + "Result" + "\t" + "Rank");
-        System.out.format("%16s%10s%12s\n", "Name", "Result", "Rank");
+
+        System.out.format("%16s%10s%12s\n", "Name", "age", "Result", "Rank");
         System.out.println("==========================================");
         for (Athelete athelete : this.atheletes) {
             System.out.format("%16s%10d%12s\n", athelete.name, athelete.getSpeedByGameIndex(gameIndex), athelete.getRankByGameIndex(gameIndex));
-//            System.out.println(athelete.name + "\t" + athelete.getSpeedByGameIndex(gameIndex) + "\t" + athelete.getRankByGameIndex(gameIndex));
+
         }
         System.out.println("==========================================");
     }

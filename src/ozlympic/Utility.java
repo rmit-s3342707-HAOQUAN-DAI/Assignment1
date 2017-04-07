@@ -3,7 +3,7 @@ package ozlympic;
 import java.util.*;
 
 public class Utility {
-
+//all names randomly combined
     final static String[] firstNames = {
             "John", "Jack", "Albert", "Bob", "Charlie", "Donald", "Elan", "Frank", "George", "Harry", "Ian", "Kevin", "Michael"
     };
