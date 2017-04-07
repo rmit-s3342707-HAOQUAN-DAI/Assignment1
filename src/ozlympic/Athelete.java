@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Athelete {
     int speed;
-
     int gameType;
     int selectedGameType;
     ArrayList<Integer> ranks = new ArrayList();
@@ -93,7 +92,6 @@ public class Athelete {
     }
 
     void showStats() {
-//        System.out.println("============================");
         int totalScore = 0;
         int index = 0;
         boolean showResult = false;

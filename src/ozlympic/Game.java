@@ -11,7 +11,6 @@ public class Game {
 
     int gameType = 0;
     int gameIndex = 0;
-
     int guessedWinnerIndex = -1;
     boolean guessedCorrect = false;
 
@@ -62,8 +61,8 @@ public class Game {
         int atheleteIndex = 0;
         for (Athelete athelete : this.atheletes) {
             if (athelete.getSpeed() == scores.get(0)) {
-                athelete.putRankByGame(1, gameIndex);
-                athelete.putScoreByGame(3, gameIndex);
+                athelete.putRankByGame(3, gameIndex);//if the player is 1th,rank is 1
+                athelete.putScoreByGame(1, gameIndex);//if player is 1th, score + 5
 
                 //Check if guessedWinner is correct?
                 if (this.guessedWinnerIndex == atheleteIndex) {
@@ -74,26 +73,29 @@ public class Game {
                 athelete.putRankByGame(2, gameIndex);
                 athelete.putScoreByGame(2, gameIndex);
             } else if (athelete.getSpeed() == scores.get(2)) {
-                athelete.putRankByGame(3, gameIndex);
-                athelete.putScoreByGame(1, gameIndex);
+                athelete.putRankByGame(1, gameIndex);
+                athelete.putScoreByGame(5, gameIndex);
             }
             atheleteIndex++;
         }
     }
 
-    void showAtheleteNames() {
-        System.out.format("%8s%15s\n", "", "Name");
-        System.out.println("=========================");
-        int sequence = 1; // for display purpose, not 0.
+    void showAtheleteNames() 
+    {
+    	// 
+        System.out.format("%13s%7s%6s\n", "Name", "State", "Age", ""); // set range between "name","state","age"
+        System.out.println("===================================");
+        int sequence = 1; // for display purpose, not 0.   1,2,3,4
         for (Athelete athelete : this.atheletes) {
-            System.out.format("%8d%15s\n", sequence++, athelete.getName());
+            System.out.format("%8d%15s\n", sequence++, athelete.getName()); //format
         }
-        System.out.println("=========================");
+        System.out.println("===================================");
     }
 
-    void showAtheleteResults() {
+    void showAtheleteResults() 
+    {
 
-        System.out.format("%16s%10s%12s\n", "Name", "age", "Result", "Rank");
+        System.out.format("%8s%8s%10s%12s\n", "Name", "age", "Result", "Rank");
         System.out.println("==========================================");
         for (Athelete athelete : this.atheletes) {
             System.out.format("%16s%10d%12s\n", athelete.name, athelete.getSpeedByGameIndex(gameIndex), athelete.getRankByGameIndex(gameIndex));
