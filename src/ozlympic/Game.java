@@ -57,7 +57,7 @@ public class Game {
             athelete.putSpeedByGame(athelete.getSpeed(), this.gameIndex);
         }
 
-        Collections.sort(scores, Collections.reverseOrder());
+        Collections.sort(scores, Collections.reverseOrder());   //collections reserve. add score. fail~
         int atheleteIndex = 0;
         for (Athelete athelete : this.atheletes) {
             if (athelete.getSpeed() == scores.get(0)) {
